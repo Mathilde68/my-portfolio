@@ -1,0 +1,298 @@
+/*resetter*/
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+:root {
+  /*---------------------------colors--------------------*/
+  /*neutral */
+
+ --lightneutral1:#F9F9F9;
+ --lightneutral2:#EFEFEF;
+  --darkneutral: #261B27;
+  /*hero color*/
+  --hero1: #013480;
+  --hero2: #343D7E;
+  
+  /*accent*/
+  --accent1: #F3233F;
+  --accent2: #FF8D9F;
+
+   /*main*/
+   --main_bg:var(--lightneutral1);
+   --darkmode_bg:var(--darkneutral);
+   --text-color-dark: var(--darkneutral);
+   --text-color-light:var(--lightneutral2);
+   --header-color:var(--lightneutral2);
+
+
+}
+/*generel*/
+
+body {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-color-dark);
+  
+  
+}
+
+main {
+  background-color: var(--main_bg);
+
+}
+section{
+  margin: 1rem auto;
+}
+
+/*fonts*/
+h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 4.2rem;
+  font-weight: 900;
+  padding-bottom: 1rem;
+}
+
+h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 3.15rem;
+  color: var(--hero1);
+}
+
+h3 {
+  font-size: 2.1rem;
+}
+
+p {
+  margin: 0.5rem auto;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+/*buttons and ui*/
+button {
+  background: #FF8D9F;
+  background-image: -webkit-linear-gradient(top, #FF8D9F, #F3233F);
+  background-image: -moz-linear-gradient(top, #FF8D9F, #F3233F);
+  background-image: -ms-linear-gradient(top, #FF8D9F, #F3233F);
+  background-image: -o-linear-gradient(top, #FF8D9F, #F3233F);
+  background-image: -webkit-gradient(to bottom, #FF8D9F, #F3233F);
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+
+  color: #FFFFFF;
+  font-family: Open Sans;
+  font-size:1rem;
+  font-weight: 100;
+  padding: 10px 35px;
+  -webkit-box-shadow: 0 6px 6px 0 rgba(38, 27, 39, 0.38);
+  -moz-box-shadow: 0 6px 6px 0 rgba(38, 27, 39, 0.38);
+  box-shadow: 0 6px 6px 0 rgba(38, 27, 39, 0.38);
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+transition: 0.8s;
+margin: 10rem;
+border: none;
+
+}
+
+button:hover {
+
+  background: #F3233F;
+  background-image: -webkit-linear-gradient(top, #F3233F, #FF8D9F);
+  background-image: -moz-linear-gradient(top, #F3233F, #FF8D9F);
+  background-image: -ms-linear-gradient(top, #F3233F, #FF8D9F);
+  background-image: -o-linear-gradient(top, #F3233F, #FF8D9F);
+  background-image: -webkit-gradient(to bottom, #F3233F, #FF8D9F);
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  text-decoration: none;
+transform: scale(0.90);
+
+}
+
+/* ------------------------------Header og Nav------------------------------------  */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 13vh;
+  position: relative;
+  z-index: 1;
+ padding:1rem;
+  color:var(--hero1);
+}
+
+nav {
+  position: absolute;
+  height: 100%;
+  display: grid;
+
+  right: 1vw;
+}
+
+/* Burger menu */
+
+/* Menuen er der stadig, men den er usynling */
+/* Ved transform er den ude til venstre, dvs. hvis man fjerne transform og opacity, er de der stadig */
+.hidden {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+#menuknap {
+  display: inline-block;
+  font-size: 3rem;
+  text-align: end;
+}
+
+#menu li a {
+ 
+  font-size: 1.1rem;
+  color: var(--hero1);
+  padding: 10px;
+  font-weight: 400;
+}
+
+/* Styler menuen  */
+/* ved transform og transition, så gør jeg at de flyver ind fra siden, hvor den så tager 
+  udgangspunkt i top og left */
+#menu {
+  list-style-type: none;
+  transition: transform 0.3s;
+  transform-origin: top right;
+}
+
+#menu a {
+  text-decoration: none;
+}
+/* navigation ved hover i mobile  */
+
+nav ul li::after {
+  content: "";
+  width: 0%;
+  height: 0.2rem;
+  background: var(--accent1);
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+nav ul li:hover::after {
+  width: 80%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--hero1);
+}
+
+/* landing */
+#landing {
+  display: flex;
+  min-height: 80vh;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.landing_graphics {
+  width: 30vw;
+  height: 30vw;
+  min-width: 300px;
+  min-height: 300px;
+  border-radius: 300px;
+  background: radial-gradient(circle, var(--accent1) 15%, var(--lightneutral1) 55%, var(--lightneutral1)90%);
+ 
+}
+
+/*about section*/
+#about_section{
+  min-height: 80vh;
+  padding: 10rem;
+   
+  background-color: var(--lightneutral2);
+}
+
+.content_grid{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  align-items: center;
+  background-color: #FF8D9F;
+
+}
+
+#about_section h2{
+    margin: 1rem;
+}
+
+.image_container{
+  flex: 1 0 300px;
+ 
+  margin: 4rem;
+}
+
+.about_text{
+  flex: 1 0 300px;
+  max-width: 40vw;
+  margin: 1rem;
+}
+
+
+@media (min-width: 600px) {
+  header {
+    position: static;
+    background-color:var(--header-color);
+  }
+
+  nav {
+    position: static;
+  }
+
+  /* menuknap vises ikke når skærmen er større end 600px */
+  #menuknap {
+    display: none;
+  }
+  /*id'et menu har classen hidden, når skærmen er større en 600px, det vil sige at den ikke er
+    usynling længere*/
+
+  #menu.hidden {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* Menuen ligger sig på linje i stor skærm */
+  #menu li {
+    margin-left: 1.2rem;
+    display: inline-block;
+  }
+
+  /* Streg under tekst i navigation ved hover i desktop  */
+
+  nav ul li::after {
+    content: "";
+    width: 0%;
+    height: 0.2rem;
+    background: var(--accent1);
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+  }
+
+  nav ul li:hover::after {
+    width: 100%;
+  }
+
+}
